@@ -1,0 +1,7 @@
+.DS_Store
+/phpunit.xml
+*~
+/app/
+composer.lock
+/Tests/cache
+/vendor/

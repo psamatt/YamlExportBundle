@@ -1,0 +1,32 @@
+{
+    "name": "psamatt/Yaml-Export-Bundle",
+    "type": "symfony-bundle",
+    "description": "Yaml Exporter for use with Symfony2",
+    "keywords": ["Yaml", "export", "dump", ""],
+    "homepage": "http://github.com/psamatt/YamlExportBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Goodwin",
+            "email": "matt.goodwin491@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Psamatt\\YamlExportBundle": "" }
+    },
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/console": "~2.1",
+        "symfony/framework-bundle": "2.3.*@dev",
+        "doctrine/orm": ">=2.2.3,<2.5-dev",
+        "doctrine/dbal": "2.2.*@dev"
+    },
+    "require-dev": {
+    	"symfony/http-kernel": "2.3.*@dev",
+    	"symfony/dependency-injection": "~2.1",
+    	
+    	"symfony/yaml": "~2"
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Psamatt/YamlExportBundle"
+}
