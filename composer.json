@@ -1,5 +1,5 @@
 {
-    "name": "psamatt/Yaml-Export-Bundle",
+    "name": "psamatt/yaml-export-bundle",
     "type": "symfony-bundle",
     "description": "Yaml Exporter for use with Symfony2",
     "keywords": ["Yaml", "export", "dump", "symfony", "doctrine"],
