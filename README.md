@@ -16,7 +16,7 @@ Add YamlExportBundle in your composer.json:
 ```js
 {
     "require": {
-        "Psamatt/YamlExportBundle": "dev-master"
+        "psamatt/yaml-export-bundle": "dev-master"
     }
 }
 
@@ -24,7 +24,7 @@ Add YamlExportBundle in your composer.json:
 
 Now tell *composer to download the bundle by running the command:
 
-` $ php composer.phar update Psamatt/YamlExportBundle `
+` $ php composer.phar update psamatt/yaml-export-bundle `
 
 Composer will install the bundle to your project's `vendor/psamatt` directory.
 
