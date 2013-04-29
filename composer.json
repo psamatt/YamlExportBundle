@@ -2,7 +2,7 @@
     "name": "psamatt/Yaml-Export-Bundle",
     "type": "symfony-bundle",
     "description": "Yaml Exporter for use with Symfony2",
-    "keywords": ["Yaml", "export", "dump", ""],
+    "keywords": ["Yaml", "export", "dump", "symfony", "doctrine"],
     "homepage": "http://github.com/psamatt/YamlExportBundle",
     "license": "MIT",
     "authors": [
