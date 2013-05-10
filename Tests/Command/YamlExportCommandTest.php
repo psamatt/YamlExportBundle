@@ -2,10 +2,10 @@
 
 namespace Psamatt\YamlExportBundle\Tests\Command;
 
-use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Yaml\Parser;
+use Mockery as m;
 
 use Psamatt\YamlExportBundle\Command\YamlExportCommand;
 
@@ -218,15 +218,15 @@ class YamlExportCommandTest extends FunctionalTestCase
     public function setUp()
     {
         parent::setUp();
+        
+        $container = m::mock('Symfony\Component\DependencyInjection\Container');
+        $container
+            ->shouldReceive('get')
+            ->once()
+            ->with('doctrine.orm.entity_manager')
+            ->andReturn($this->getEntityManager());
 
-        // mock the container to remove dependency
-        $container = $this->getMock('Symfony\Component\DependencyInjection\Container', array('get'));
-        $container->expects($this->once())
-                ->method('get')
-                ->with('doctrine.orm.entity_manager') // parameters that are expected
-                ->will($this->returnValue($this->getEntityManager())); // return value
-
-        $application = new Application(new \AppKernel('test', false));
+        $application = new Application();
         $application->add(new YamlExportCommand());
 
         $this->command = $application->find('YamlExport:data-dump');
