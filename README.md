@@ -57,19 +57,19 @@ public function registerBundles()
 
 #### Using DQL and writing out to Terminal
 
-`php app/console YamlExport:data-dump "SELECT * FROM AcmeStoreBundle:BlogPost"`
+`php app/console psamatt:yaml-export:dump "SELECT * FROM AcmeStoreBundle:BlogPost"`
 
 #### Using DQL and storing output to a specified file
 
-`php app/console YamlExport:data-dump "SELECT * FROM AcmeStoreBundle:BlogPost" > /path/to/file.yml`
+`php app/console psamatt:yaml-export:dump "SELECT * FROM AcmeStoreBundle:BlogPost" > /path/to/file.yml`
 
 #### Using DQL namespaced entity to a specified file
 
-`php app/console YamlExport:data-dump "SELECT * FROM \Acme\StoreBundle\Entity\BlogPost" > /path/to/file.yml`
+`php app/console psamatt:yaml-export:dump "SELECT * FROM \Acme\StoreBundle\Entity\BlogPost" > /path/to/file.yml`
 
 #### Using SQL and storing output to a specified file
 
-`php app/console YamlExport:data-dump "SELECT * FROM blog_posts" --sql > /path/to/file.yml`
+`php app/console psamatt:yaml-export:dump "SELECT * FROM blog_posts" --sql > /path/to/file.yml`
 
 ** Then in your Unit Test file you need to specify the YAML file **
 

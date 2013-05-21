@@ -23,7 +23,7 @@ class YamlExportCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('YamlExport:data-dump')
+            ->setName('psamatt:yaml-export:dump')
             ->setDescription('Database entity exporter of one / many entities')
             ->addArgument('query', InputArgument::REQUIRED, 'The query to run')
             ->addOption('sql', null, InputOption::VALUE_NONE, 'If set, then we assume we are trying to run as native sql')
