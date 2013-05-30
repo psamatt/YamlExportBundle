@@ -7,7 +7,7 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        return array();
+        return array(new Psamatt\YamlExportBundle\PsamattYamlExportBundle(),);
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
