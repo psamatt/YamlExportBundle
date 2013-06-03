@@ -1,5 +1,7 @@
 # YamlExportBundle
 
+[![Build Status](https://api.travis-ci.org/psamatt/YamlExportBundle.png?branch=master)](https://api.travis-ci.org/psamatt/YamlExportBundle)
+
 Symfony2 bundle to export database records into YAML format using a Symfony2 Command. 
 
 This bundle allows you to export specific database records into YAML format enabling DBUnit testing on your repositories functions. This can be used as a very generic export of all rows such as `SELECT * FROM table` or you can create a very specific use case using powerful DQL (or native SQL) to export those rows that enable you to have a full test suite for your repository functions.
