@@ -229,7 +229,7 @@ class YamlExportCommandTest extends FunctionalTestCase
         $application = new Application();
         $application->add(new YamlExportCommand());
 
-        $this->command = $application->find('YamlExport:data-dump');
+        $this->command = $application->find('psamatt:yaml-export:dump');
         $this->command->setContainer($container);
 
         $this->yaml = new Parser();
