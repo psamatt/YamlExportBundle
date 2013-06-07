@@ -2,6 +2,7 @@ blog_posts:
   -
     id: 1
     title: "My very first blog post"
+    intro: "This intro introduces the user to the blo"
     content: "This is my first blog post, so please enjoy"
     date_added: "2010-02-11 11:02:57"
     category_id: 2

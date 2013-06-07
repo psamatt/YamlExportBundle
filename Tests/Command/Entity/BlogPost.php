@@ -20,7 +20,12 @@ class BlogPost
      * @ORM\Column(type="string")
      */
     public $title;
-
+    
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    public $intro;
+    
     /**
      * @ORM\Column(type="text")
      */

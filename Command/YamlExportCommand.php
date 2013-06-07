@@ -81,17 +81,19 @@ class YamlExportCommand extends ContainerAwareCommand
                 $returnString .= "  -\n";
                 foreach ($row as $fieldName => $fieldValue) {
                     $literalFlag = "";
-
-                    if (is_object($fieldValue)) {
-                         if ($fieldValue instanceof \DateTime) {
-                             $fieldValue = $fieldValue->format('Y-m-d H:i:s');
-                         }
-                     } elseif (is_string($fieldValue)) {
-
-                         // Do have any newlines or line feeds?
+                    
+                    if (is_null($fieldValue)) {
+                        $fieldValue = '~';
+                    } elseif (is_object($fieldValue)) {
+                        if ($fieldValue instanceof \DateTime) {
+                            $fieldValue = $fieldValue->format('Y-m-d H:i:s');
+                        }
+                    
+                    } elseif (is_string($fieldValue) && !is_numeric($fieldValue)) {
+                        // Do have any newlines or line feeds?
                         $literalFlag = (strpos($fieldValue, "\r") !== FALSE || strpos($fieldValue, "\n") !== FALSE) ? "| " : "";
-                         $fieldValue = '"' . str_replace('"','\"',$fieldValue) . '"';
-                     }
+                        $fieldValue = '"' . str_replace('"','\"',$fieldValue) . '"';
+                    }
 
                     // Output the key/value pair
                     $returnString .= "    {$fieldName}: {$literalFlag}{$fieldValue}\n";
