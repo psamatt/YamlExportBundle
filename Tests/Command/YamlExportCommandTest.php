@@ -233,8 +233,8 @@ class YamlExportCommandTest extends FunctionalTestCase
         );
         
         $this->assertContains('[dir+] Files/BlogPost', $commandTester->getDisplay());
-        $this->assertContains('[file+] Files/BlogPost/blog_post.yml', $commandTester->getDisplay());
-        $this->assertContains('Output written into Files/BlogPost/blog_post.yml', $commandTester->getDisplay());
+        $this->assertContains('[file+] Files/BlogPost/seed.yml', $commandTester->getDisplay());
+        $this->assertContains('Output written into Files/BlogPost/seed.yml', $commandTester->getDisplay());
     }
 
     /**
