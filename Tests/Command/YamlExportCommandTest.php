@@ -203,6 +203,39 @@ class YamlExportCommandTest extends FunctionalTestCase
 
         $this->assertRegExp('/error/i', $commandTester->getDisplay());
     }
+    
+    /**
+     * Test a valid DQL and writing out to file
+     *
+     */
+    public function testValidDQLWithTargetArgumentContainingJustFile()
+    {
+        $commandTester = new CommandTester($this->command);
+
+        $commandTester->execute(
+            array('command' => $this->command->getName(), 'query' => 'SELECT bp FROM PsamattYamlExportBundle:BlogPost bp', 'target' => 'Files/blog_post.yml')
+        );
+
+        $this->assertContains('[file+] Files/blog_post.yml', $commandTester->getDisplay());
+        $this->assertContains('Output written into Files/blog_post.yml', $commandTester->getDisplay());
+    }
+    
+    /**
+     * Test a valid DQL with creating new directory and file and writing out to file
+     *
+     */
+    public function testValidDQLWithTargetArgumentContainingNewDirAndFile()
+    {
+        $commandTester = new CommandTester($this->command);
+
+        $commandTester->execute(
+            array('command' => $this->command->getName(), 'query' => 'SELECT bp FROM PsamattYamlExportBundle:BlogPost bp', 'target' => 'Files/BlogPost/seed.yml')
+        );
+        
+        $this->assertContains('[dir+] Files/BlogPost', $commandTester->getDisplay());
+        $this->assertContains('[file+] Files/BlogPost/blog_post.yml', $commandTester->getDisplay());
+        $this->assertContains('Output written into Files/BlogPost/blog_post.yml', $commandTester->getDisplay());
+    }
 
     /**
     * {@inheritdoc}
