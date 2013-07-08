@@ -26,7 +26,7 @@ class YamlExportCommand extends ContainerAwareCommand
     * Configure the command
     *
     * Argument :: query SQL or DQL
-    * Option :: target
+    * Argument :: target
     * Option :: sql
     */
     protected function configure()
